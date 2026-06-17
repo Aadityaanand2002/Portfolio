@@ -36,18 +36,20 @@
   const isMobile = window.innerWidth < 768;
 
   // --- The Morphing Liquid Blob (Centerpiece) ---
-  const blobGeometry = new THREE.IcosahedronGeometry(1.8, 16);
+  const blobGeometry = new THREE.IcosahedronGeometry(1.8, isMobile ? 8 : 16);
   const blobMaterial = new THREE.MeshPhysicalMaterial({
     color: 0x22d3ee, // Base cyan
     roughness: 0.1,
     metalness: 0.2,
-    transmission: 0.95, // Glass-like transparency
+    transmission: isMobile ? 0 : 0.95, // Disable heavy refraction pass on mobile
     thickness: 1.5,     // Refraction thickness
     ior: 1.4,
-    clearcoat: 1.0,
+    clearcoat: isMobile ? 0 : 1.0, // Disable clearcoat on mobile
     clearcoatRoughness: 0.1,
     emissive: 0x6c63ff,
     emissiveIntensity: 0.1,
+    transparent: true,
+    opacity: isMobile ? 0.8 : 1.0 // Fallback to simple transparency for mobile
   });
   const blob = new THREE.Mesh(blobGeometry, blobMaterial);
   blob.position.set(2, 0, -1);
@@ -160,7 +162,11 @@
       positionAttribute.array[iz] = oz + (oz / 1.8) * noise;
     }
     positionAttribute.needsUpdate = true;
-    blobGeometry.computeVertexNormals();
+    
+    // Throttle heavy geometry computation on mobile to prevent CPU spikes
+    if (!isMobile || Math.random() > 0.5) {
+      blobGeometry.computeVertexNormals();
+    }
 
     // Animate Flowing Terrain
     const terrainTime = elapsed * 0.5;
@@ -204,11 +210,16 @@
   animate();
 
   // Resize handler
+  let lastWidth = window.innerWidth;
   window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    // Only trigger full resize if width changed to prevent address bar thrashing on mobile
+    if (window.innerWidth !== lastWidth || !isMobile) {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+      lastWidth = window.innerWidth;
+    }
   });
 
   // Mouse move
@@ -561,17 +572,6 @@
       card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
-
-  // Cross-browser animated running border angle
-  let borderAngle = 0;
-  function updateBorderAngle() {
-    borderAngle = (borderAngle + 1.5) % 360;
-    glowCards.forEach(card => {
-      card.style.setProperty('--angle', `${borderAngle}deg`);
-    });
-    requestAnimationFrame(updateBorderAngle);
-  }
-  updateBorderAngle();
 
   // ============================================
   // 11. CONTACT FORM — EmailJS Integration
