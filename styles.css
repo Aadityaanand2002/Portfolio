@@ -1862,6 +1862,27 @@ section {
     height: 32px;
     font-size: 13px;
   }
+
+  /* Simplify decorative animations on mobile for better performance and UX */
+  .hero-canvas,
+  .hero-badge,
+  .hero-badge-dot,
+  .hero-title,
+  .hero-title-gradient,
+  .scroll-indicator,
+  .scroll-indicator-mouse::before,
+  .glass-card::before,
+  .glass-card-glow::before,
+  .glass-card-glow::after,
+  .btn-primary,
+  .btn-primary::before,
+  .float-blob {
+    animation: none !important;
+  }
+
+  .glass-card::before {
+    opacity: 0.4;
+  }
 }
 
 /* Small Mobile */
