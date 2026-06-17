@@ -1,931 +1,953 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aditya Anand — Full-Stack Developer Portfolio</title>
-    <meta
-      name="description"
-      content="Aditya Anand's portfolio — a full-stack developer showcasing creative web applications, modern UI/UX, and cutting-edge projects."
-    />
-    <meta
-      name="keywords"
-      content="Aditya Anand, portfolio, developer, full-stack, web developer, React, Node.js, Python"
-    />
-    <meta name="author" content="Aditya Anand" />
-    <meta property="og:title" content="Aditya Anand — Full-Stack Developer" />
-    <meta
-      property="og:description"
-      content="Explore Aditya's portfolio of creative web applications and cutting-edge projects."
-    />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#06060b" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Anand — Full-Stack Developer Portfolio</title>
+  <meta name="description"
+    content="Aditya Anand's portfolio — a full-stack developer showcasing creative web applications, modern UI/UX, and cutting-edge projects." />
+  <meta name="keywords"
+    content="Aditya Anand, portfolio, developer, full-stack, web developer, React, Node.js, Python" />
+  <meta name="author" content="Aditya Anand" />
+  <meta property="og:title" content="Aditya Anand — Full-Stack Developer" />
+  <meta property="og:description"
+    content="Explore Aditya's portfolio of creative web applications and cutting-edge projects." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#06060b" />
 
-  <body>
-    <!-- Three.js Canvas -->
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <!-- Canvas fade overlay for lower sections -->
-    <div class="hero-canvas-overlay"></div>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>" />
+</head>
 
-    <!-- ========== NAVIGATION ========== -->
-    <nav class="navbar" id="navbar">
-      <div class="container">
-        <a href="#hero" class="nav-logo">
-          <img src="logo.png" alt="A Logo" />
-        </a>
-        <ul class="nav-links" id="navLinks">
-          <li>
-            <a href="#about" class="nav-link" data-section="about">About</a>
-          </li>
-          <li>
-            <a href="#education" class="nav-link" data-section="education"
-              >Education</a
-            >
-          </li>
-          <li>
-            <a href="#projects" class="nav-link" data-section="projects"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-          </li>
-          <li>
-            <a href="#experience" class="nav-link" data-section="experience"
-              >Experience</a
-            >
-          </li>
-          <li>
-            <a
-              href="#coding-profiles"
-              class="nav-link"
-              data-section="coding-profiles"
-              >Profiles</a
-            >
-          </li>
-          <li>
-            <a href="#achievements" class="nav-link" data-section="achievements"
-              >Achievements</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="nav-link nav-cta btn btn-primary"
-              data-section="contact"
-              >Let's Talk</a
-            >
-          </li>
-        </ul>
-        <div class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+<body>
+  <!-- Three.js Canvas -->
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <!-- Canvas fade overlay for lower sections -->
+  <div class="hero-canvas-overlay"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">
+        <img src="logo.png" alt="A Logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="#about" class="nav-link" data-section="about">About</a>
+        </li>
+        <li>
+          <a href="#education" class="nav-link" data-section="education">Education</a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        </li>
+        <li>
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        </li>
+        <li>
+          <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        </li>
+        <li>
+          <a href="#coding-profiles" class="nav-link" data-section="coding-profiles">Profiles</a>
+        </li>
+        <li>
+          <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link nav-cta btn btn-primary" data-section="contact">Let's Talk</a>
+        </li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </nav>
-
-    <!-- Mobile Nav -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#about" class="nav-link" data-mobile>About</a>
-      <a href="#education" class="nav-link" data-mobile>Education</a>
-      <a href="#projects" class="nav-link" data-mobile>Projects</a>
-      <a href="#skills" class="nav-link" data-mobile>Skills</a>
-      <a href="#experience" class="nav-link" data-mobile>Experience</a>
-      <a href="#coding-profiles" class="nav-link" data-mobile>Profiles</a>
-      <a href="#achievements" class="nav-link" data-mobile>Achievements</a>
-      <a href="#contact" class="nav-link" data-mobile>Contact</a>
     </div>
+  </nav>
 
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <div class="hero-badge reveal-scale">
-          <span class="hero-badge-dot"></span>
-          Open to Opportunities
-        </div>
-        <h1 class="hero-title reveal-up">
-          <span class="hero-title-line1">Hi, I'm</span>
-          <span class="hero-title-gradient">Aditya Anand</span>
-        </h1>
-        <p class="hero-subtitle reveal-up" id="heroSubtitle">
-          <span id="typedText"></span><span class="typed-cursor">|</span>
-        </p>
-        <div class="hero-buttons reveal-up">
-          <a href="#projects" class="btn btn-primary">
-            <span>View My Work</span>
-            <svg
-              class="btn-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <span>Get In Touch</span>
-            <svg
-              class="btn-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-              />
-            </svg>
-          </a>
-        </div>
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" class="nav-link" data-mobile>About</a>
+    <a href="#education" class="nav-link" data-mobile>Education</a>
+    <a href="#projects" class="nav-link" data-mobile>Projects</a>
+    <a href="#skills" class="nav-link" data-mobile>Skills</a>
+    <a href="#experience" class="nav-link" data-mobile>Experience</a>
+    <a href="#coding-profiles" class="nav-link" data-mobile>Profiles</a>
+    <a href="#achievements" class="nav-link" data-mobile>Achievements</a>
+    <a href="#contact" class="nav-link" data-mobile>Contact</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal-scale">
+        <span class="hero-badge-dot"></span>
+        Open to Opportunities
       </div>
-      <div class="scroll-indicator">
-        <div class="scroll-indicator-mouse">
-          <div></div>
-        </div>
-        <span>Scroll</span>
+      <h1 class="hero-title reveal-up">
+        <span class="hero-title-line1">Hi, I'm</span>
+        <span class="hero-title-gradient">Aditya Anand</span>
+      </h1>
+      <p class="hero-subtitle reveal-up" id="heroSubtitle">
+        <span id="typedText"></span><span class="typed-cursor">|</span>
+      </p>
+      <div class="hero-buttons reveal-up">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <span>Get In Touch</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </a>
       </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- ========== ABOUT ========== -->
-    <section class="about" id="about">
-      <div class="gradient-blob blob-1"></div>
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">About Me</span>
-          <h2 class="section-title reveal-up">Crafting Digital Experiences</h2>
-          <p class="section-subtitle reveal-up">
-            Passionate about building things that live on the internet and
-            solving problems with elegant code.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-image-wrapper reveal-left">
-            <div class="about-image-card glass-card glass-card-glow">
-              <div class="about-image" id="aboutImage">
-                <img src="profile.jpeg" alt="Aditya Anand" />
-              </div>
-              <div class="about-image-accent"></div>
-              <div class="about-image-accent-2"></div>
-            </div>
-          </div>
-
-          <div class="about-text reveal-right">
-            <h3>A developer who cares about craft, code, and creativity.</h3>
-            <p>
-              I am a B.Tech student at IIIT Surat, currently pursuing my
-              Bachelor's of Technology in
-              <span class="text-highlight"
-                >Electronics and Communication Engineering</span
-              >. I have a strong passion for solving real-world problems through
-              technology and building
-              <span class="text-highlight-warm"
-                >impactful digital solutions</span
-              >.
-            </p>
-            <p>
-              My journey is driven by curiosity — constantly exploring new
-              tools, participating in coding challenges, and applying my
-              engineering background to create
-              <span class="text-highlight"
-                >innovative, end-to-end applications</span
-              >.
-            </p>
-
-            <div class="about-stats">
-              <div class="stat-card glass-card">
-                <div class="stat-number text-highlight" data-count="5">0</div>
-                <div class="stat-label">Projects Built</div>
-              </div>
-              <div class="stat-card glass-card">
-                <div class="stat-number text-highlight-warm" data-count="9">
-                  0
-                </div>
-                <div class="stat-label">Technologies</div>
-              </div>
-              <div class="stat-card glass-card">
-                <div class="stat-number text-highlight" data-count="500">0</div>
-                <div class="stat-label">DSA Problems</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-indicator-mouse">
+        <div></div>
       </div>
-    </section>
+      <span>Scroll</span>
+    </div>
+  </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
+  <!-- Divider -->
+  <div class="section-divider"></div>
 
-    <!-- ========== EDUCATION ========== -->
-    <section class="education" id="education">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">Learning</span>
-          <h2 class="section-title reveal-up">Education</h2>
-          <p class="section-subtitle reveal-up">
-            My academic background and continuous pursuit of knowledge.
-          </p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-line-fill" id="timelineFill2"></div>
-
-          <div class="timeline-item reveal-up">
-            <div class="timeline-dot">🎓</div>
-            <div class="timeline-card glass-card glass-card-glow">
-              <div class="timeline-date">July 2023 — June 2027</div>
-              <h3 class="timeline-title">
-                B.Tech in Electronics & Communication
-              </h3>
-              <div class="timeline-company">
-                Indian Institute of Information Technology (IIIT) Surat
-              </div>
-              <p class="timeline-description">
-                Currently pursuing my undergraduate degree with a CGPA of
-                7.96/10.0. Actively combining my engineering fundamentals with
-                software development to solve real-world problems.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PROJECTS ========== -->
-    <section class="projects" id="projects">
-      <div class="gradient-blob blob-2"></div>
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">My Work</span>
-          <h2 class="section-title reveal-up">Featured Projects</h2>
-          <p class="section-subtitle reveal-up">
-            A collection of projects that showcase my skills in building modern,
-            performant web applications.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div
-            class="project-card glass-card glass-card-glow reveal-up"
-            data-tilt
-          >
-            <span class="project-number">01</span>
-            <div class="project-image">
-              <img src="project1.png" alt="Leetcode Detective" />
-              <div class="project-overlay">
-                <a
-                  href="https://leetcode-detective-five.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn primary"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/Aadityaanand2002/LeetCode-Detective"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn secondary"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Python (Flask)</span>
-                <span class="project-tag">Java (JPlag)</span>
-              </div>
-              <h3 class="project-title">LeetCode Detective</h3>
-              <p class="project-description">
-                🕵️‍♂️ Identify plagiarism clusters and AI-generated code-copying
-                rings in LeetCode contests using graph analysis.
-              </p>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div
-            class="project-card glass-card glass-card-glow reveal-up"
-            data-tilt
-          >
-            <span class="project-number">02</span>
-            <div class="project-image">
-              <img src="project2.png" alt="Social Scheduler" />
-              <div class="project-overlay">
-                <a
-                  href="https://social-scheduler-one-rho.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn primary"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/Aadityaanand2002/Social-Scheduler"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn secondary"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Node/Express</span>
-                <span class="project-tag">MongoDB</span>
-                <span class="project-tag">Stripe</span>
-              </div>
-              <h3 class="project-title">Social Scheduler</h3>
-              <p class="project-description">
-                A full-stack application designed for efficient scheduling and
-                automation of social media posts.
-              </p>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="project-card glass-card glass-card-glow reveal-up"
-            data-tilt
-          >
-            <span class="project-number">03</span>
-            <div class="project-image">
-              <img src="" alt="Interview Verse" id="project3Img" />
-              <div class="project-overlay">
-                <a
-                  href="https://github.com/Aadityaanand2002/InterviewVerse"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn secondary"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Node.js</span>
-                <span class="project-tag">Express</span>
-                <span class="project-tag">WebRTC</span>
-              </div>
-              <h3 class="project-title">Interview Verse</h3>
-              <p class="project-description">
-                An interactive platform providing real-time coding environments
-                to help candidates prepare for technical interviews. (In
-                Progress)
-              </p>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div
-            class="project-card glass-card glass-card-glow reveal-up"
-            data-tilt
-          >
-            <span class="project-number">04</span>
-            <div class="project-image">
-              <img src="" alt="Self Driving Car" id="project4Img" />
-              <div class="project-overlay">
-                <a
-                  href="https://aadityaanand2002.github.io/rl-self-driving-car/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn primary"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/Aadityaanand2002/rl-self-driving-car"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn secondary"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">Three.js</span>
-                <span class="project-tag">Q-Learning</span>
-              </div>
-              <h3 class="project-title">Self Driving Car (RL)</h3>
-              <p class="project-description">
-                Tabular Q-learning agent that learns to drive on a 4-lane
-                highway in a custom 3D traffic simulator using Three.js and
-                Vite.
-              </p>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div
-            class="project-card glass-card glass-card-glow reveal-up"
-            data-tilt
-          >
-            <span class="project-number">05</span>
-            <div class="project-image">
-              <img src="" alt="Agency.ai" id="project5Img" />
-              <div class="project-overlay">
-                <a
-                  href="https://agency-ai-tau-pearl.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn primary"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/Aadityaanand2002/Agency.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn secondary"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Vite</span>
-                <span class="project-tag">Tailwind</span>
-              </div>
-              <h3 class="project-title">Agency.ai</h3>
-              <p class="project-description">
-                An intelligent AI-driven platform built to streamline agency
-                workflows, client management, and business operations.
-              </p>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div
-            class="project-card glass-card glass-card-glow reveal-up"
-            data-tilt
-          >
-            <span class="project-number">06</span>
-            <div class="project-image">
-              <img src="" alt="AMTT Scheduling" id="project6Img" />
-              <div class="project-overlay">
-                <a
-                  href="https://github.com/Aadityaanand2002/AMTT-SCHEDULING"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-overlay-btn secondary"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">MATLAB</span>
-                <span class="project-tag">Simulation</span>
-                <span class="project-tag">WSNs</span>
-              </div>
-              <h3 class="project-title">AMTT Scheduling</h3>
-              <p class="project-description">
-                Adaptive Sensor Scheduling for Energy-Efficient Target Tracking
-                in Heterogeneous Wireless Sensor Networks (WSNs). (In Progress)
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- ========== SKILLS ========== -->
-    <section class="skills" id="skills">
-      <div class="gradient-blob blob-3"></div>
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">Expertise</span>
-          <h2 class="section-title reveal-up">Skills &amp; Technologies</h2>
-          <p class="section-subtitle reveal-up">
-            Technologies I've been working with and continuously improving on.
-          </p>
-        </div>
-
-        <div class="skills-marquee-container">
-          <div class="skills-marquee-track">
-            <!-- Group 1 -->
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-programming.png" alt="C"><span>C</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-plus-plus-logo.png" alt="C++"><span>C++</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/java-coffee-cup-logo--v1.png" alt="Java"><span>Java</span></div>
-            <div class="skill-marquee-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/html-5--v1.png" alt="HTML"><span>HTML</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/css3.png" alt="CSS"><span>CSS</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/react-native.png" alt="React"><span>React</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/tailwindcss.png" alt="Tailwind CSS"><span>Tailwind CSS</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/nodejs.png" alt="Node.js"><span>Node.js</span></div>
-            <div class="skill-marquee-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express"><span>Express</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/nolan/96/api.png" alt="API"><span>API</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/ios-filled/96/ffffff/flask.png" alt="Flask"><span>Flask</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/supabase.png" alt="Supabase"><span>Supabase</span></div>
-            <!-- Group 2 (duplicate for seamless loop) -->
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-programming.png" alt="C"><span>C</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-plus-plus-logo.png" alt="C++"><span>C++</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/java-coffee-cup-logo--v1.png" alt="Java"><span>Java</span></div>
-            <div class="skill-marquee-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/html-5--v1.png" alt="HTML"><span>HTML</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/css3.png" alt="CSS"><span>CSS</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/react-native.png" alt="React"><span>React</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/tailwindcss.png" alt="Tailwind CSS"><span>Tailwind CSS</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/nodejs.png" alt="Node.js"><span>Node.js</span></div>
-            <div class="skill-marquee-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express"><span>Express</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/nolan/96/api.png" alt="API"><span>API</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/ios-filled/96/ffffff/flask.png" alt="Flask"><span>Flask</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
-            <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/supabase.png" alt="Supabase"><span>Supabase</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- ========== EXPERIENCE ========== -->
-    <section class="experience" id="experience">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">Journey</span>
-          <h2 class="section-title reveal-up">Professional Experience</h2>
-          <p class="section-subtitle reveal-up">
-            My professional journey and the milestones that shaped my
-            development career.
-          </p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-line-fill" id="timelineFill"></div>
-
-          <div class="timeline-item reveal-up">
-            <div class="timeline-dot">🤖</div>
-            <div class="timeline-card glass-card glass-card-glow">
-              <div class="timeline-date">Recent</div>
-              <h3 class="timeline-title">Freelance AI Data Model Evaluator</h3>
-              <div class="timeline-company">Freelance</div>
-              <p class="timeline-description">
-                Working on the training, fine-tuning, and evaluation of advanced
-                AI data models to ensure accuracy and performance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- ========== CODING PROFILES ========== -->
-    <section class="coding-profiles" id="coding-profiles">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">Competitive Programming</span>
-          <h2 class="section-title reveal-up">Coding Profiles</h2>
-          <p class="section-subtitle reveal-up">
-            My statistics and achievements across various coding platforms.
-          </p>
-        </div>
-
-        <div class="cp-grid">
-          <!-- LeetCode Card -->
-          <a
-            href="https://leetcode.com/u/Aditya_Anand12/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cp-card glass-card glass-card-glow reveal-up"
-          >
-            <div class="cp-header">
-              <div>
-                <h3 class="cp-title">LeetCode</h3>
-                <span class="cp-handle">@Aditya_Anand12</span>
-              </div>
-              <div class="cp-icon">
-                <img
-                  src="https://cdn.simpleicons.org/leetcode/FFA116"
-                  alt="LeetCode"
-                />
-              </div>
-            </div>
-            <div class="cp-stats">
-              <div class="cp-stat-row">
-                <span class="cp-stat-label">Max Rating</span>
-                <span class="cp-stat-value text-cyan" id="lc-rating">1456</span>
-              </div>
-              <div class="cp-stat-row">
-                <span class="cp-stat-label">Question Solved</span>
-                <span class="cp-stat-value text-green" id="lc-solved">293</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- GeeksforGeeks Card -->
-          <a
-            href="https://www.geeksforgeeks.org/profile/ak823s4dn?tab=activity"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cp-card glass-card glass-card-glow reveal-up"
-          >
-            <div class="cp-header">
-              <div>
-                <h3 class="cp-title">GeeksforGeeks</h3>
-                <span class="cp-handle">@ak823s4dn</span>
-              </div>
-              <div class="cp-icon">
-                <img
-                  src="https://cdn.simpleicons.org/geeksforgeeks/2F8D46"
-                  alt="GeeksforGeeks"
-                />
-              </div>
-            </div>
-            <div class="cp-stats">
-              <div class="cp-stat-row">
-                <span class="cp-stat-label">Max Rating</span>
-                <span class="cp-stat-value text-cyan">1200</span>
-              </div>
-              <div class="cp-stat-row">
-                <span class="cp-stat-label">Question Solved</span>
-                <span class="cp-stat-value text-green">93</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Codeforces Card -->
-          <a
-            href="https://codeforces.com/profile/Coookies"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cp-card glass-card glass-card-glow reveal-up"
-          >
-            <div class="cp-header">
-              <div>
-                <h3 class="cp-title">Codeforces</h3>
-                <span class="cp-handle">@Coookies</span>
-              </div>
-              <div class="cp-icon">
-                <img
-                  src="https://cdn.simpleicons.org/codeforces/1F8ACB"
-                  alt="Codeforces"
-                />
-              </div>
-            </div>
-            <div class="cp-stats">
-              <div class="cp-stat-row">
-                <span class="cp-stat-label">Max Rating</span>
-                <span class="cp-stat-value text-cyan" id="cf-rating">1193</span>
-              </div>
-              <div class="cp-stat-row">
-                <span class="cp-stat-label">Question Solved</span>
-                <span class="cp-stat-value text-green" id="cf-solved">150</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== ACHIEVEMENTS ========== -->
-    <section class="achievements" id="achievements">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">Milestones</span>
-          <h2 class="section-title reveal-up">Achievements & Awards</h2>
-          <p class="section-subtitle reveal-up">
-            Key milestones and recognitions from my journey so far.
-          </p>
-        </div>
-
-        <div class="achievements-grid">
-          <!-- Add your achievements here in the future -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- ========== CONTACT ========== -->
-    <section class="contact" id="contact">
-      <div class="gradient-blob blob-1"></div>
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label reveal-up">Get In Touch</span>
-          <h2 class="section-title reveal-up">Let's Work Together</h2>
-          <p class="section-subtitle reveal-up">
-            Have a project in mind or just want to say hello? I'd love to hear
-            from you.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info reveal-left">
-            <h3>Let's create something amazing together.</h3>
-            <p>
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your vision.
-            </p>
-
-            <div class="contact-detail">
-              <div class="contact-detail-icon">📧</div>
-              <div class="contact-detail-text">
-                <strong>Email</strong>
-                <a href="mailto:adityaanand15902@gmail.com"
-                  >adityaanand15902@gmail.com</a
-                >
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <div class="contact-detail-icon">📱</div>
-              <div class="contact-detail-text">
-                <strong>Phone</strong>
-                <a href="tel:+919308817989">+91 9308817989</a>
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <div class="contact-detail-icon">📍</div>
-              <div class="contact-detail-text">
-                <strong>Location</strong>
-                IIIT Surat, India
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <div class="contact-detail-icon">💼</div>
-              <div class="contact-detail-text">
-                <strong>Status</strong>
-                Available for Opportunities
-              </div>
-            </div>
-
-            <div class="contact-socials">
-              <a
-                href="#"
-                class="social-link"
-                aria-label="GitHub"
-                title="GitHub"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="social-link"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="social-link"
-                aria-label="Twitter"
-                title="Twitter"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div
-            class="contact-form-card glass-card glass-card-glow reveal-right"
-          >
-            <form id="contactForm" novalidate>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-input"
-                  id="contactName"
-                  placeholder="Your Name"
-                  required
-                  autocomplete="name"
-                />
-                <label class="form-label" for="contactName">Name</label>
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  class="form-input"
-                  id="contactEmail"
-                  placeholder="Your Email"
-                  required
-                  autocomplete="email"
-                />
-                <label class="form-label" for="contactEmail">Email</label>
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-input"
-                  id="contactSubject"
-                  placeholder="Subject"
-                  autocomplete="off"
-                />
-                <label class="form-label" for="contactSubject">Subject</label>
-              </div>
-              <div class="form-group">
-                <textarea
-                  class="form-textarea"
-                  id="contactMessage"
-                  placeholder="Your Message"
-                  rows="5"
-                  required
-                ></textarea>
-                <label class="form-label" for="contactMessage">Message</label>
-              </div>
-              <button
-                type="submit"
-                class="btn btn-primary form-submit"
-                id="formSubmitBtn"
-              >
-                <span>Send Message</span>
-                <svg
-                  class="btn-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-      <div class="container">
-        <p class="footer-text">
-          Designed & Built by <span>Aditya Anand</span> · © 2024. All rights
-          reserved.
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="gradient-blob blob-1"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">About Me</span>
+        <h2 class="section-title reveal-up">Crafting Digital Experiences</h2>
+        <p class="section-subtitle reveal-up">
+          Passionate about building things that live on the internet and
+          solving problems with elegant code.
         </p>
       </div>
-    </footer>
 
-    <!-- Scripts (CDN) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal-left">
+          <div class="about-image-card glass-card glass-card-glow">
+            <div class="about-image" id="aboutImage">
+              <img src="profile.jpeg" alt="Aditya Anand" />
+            </div>
+            <div class="about-image-accent"></div>
+            <div class="about-image-accent-2"></div>
+          </div>
+        </div>
+
+        <div class="about-text reveal-right">
+          <h3>A developer who cares about craft, code, and creativity.</h3>
+          <p>
+            I am a B.Tech student at IIIT Surat, currently pursuing my
+            Bachelor's of Technology in
+            <span class="text-highlight">Electronics and Communication Engineering</span>. I have a strong passion for
+            solving real-world problems through
+            technology and building
+            <span class="text-highlight-warm">impactful digital solutions</span>.
+          </p>
+          <p>
+            My journey is driven by curiosity — constantly exploring new
+            tools, participating in coding challenges, and applying my
+            engineering background to create
+            <span class="text-highlight">innovative, end-to-end applications</span>.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-card glass-card">
+              <div class="stat-number text-highlight" data-count="5">0</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number text-highlight-warm" data-count="9">
+                0
+              </div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number text-highlight" data-count="500">0</div>
+              <div class="stat-label">DSA Problems</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider"></div>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Learning</span>
+        <h2 class="section-title reveal-up">Education</h2>
+        <p class="section-subtitle reveal-up">
+          My academic background and continuous pursuit of knowledge.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line-fill" id="timelineFill2"></div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot">🎓</div>
+          <div class="timeline-card glass-card glass-card-glow">
+            <div class="timeline-date">July 2023 — June 2027</div>
+            <h3 class="timeline-title">
+              B.Tech in Electronics & Communication
+            </h3>
+            <div class="timeline-company">
+              Indian Institute of Information Technology (IIIT) Surat
+            </div>
+            <p class="timeline-description">
+              Currently pursuing my undergraduate degree with a CGPA of
+              7.96/10.0. Actively combining my engineering fundamentals with
+              software development to solve real-world problems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects" id="projects">
+    <div class="gradient-blob blob-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">My Work</span>
+        <h2 class="section-title reveal-up">Featured Projects</h2>
+        <p class="section-subtitle reveal-up">
+          A collection of projects that showcase my skills in building modern,
+          performant web applications.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card glass-card-glow reveal-up" data-tilt>
+          <span class="project-number">01</span>
+          <div class="project-image">
+            <img src="project1.png" alt="Leetcode Detective" />
+            <div class="project-overlay">
+              <a href="https://leetcode-detective-five.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn primary">Live Demo</a>
+              <a href="https://github.com/Aadityaanand2002/LeetCode-Detective" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn secondary">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">curl cffi</span>
+              <span class="project-tag">Supabase</span>
+            </div>
+            <h3 class="project-title">LeetCode Detective</h3>
+            <p class="project-description">
+              Identify plagiarism clusters and AI-generated code-copying
+              rings in LeetCode contests using graph analysis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card glass-card-glow reveal-up" data-tilt>
+          <span class="project-number">02</span>
+          <div class="project-image">
+            <img src="project2.png" alt="Social Scheduler" />
+            <div class="project-overlay">
+              <a href="https://social-scheduler-one-rho.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn primary">Live Demo</a>
+              <a href="https://github.com/Aadityaanand2002/Social-Scheduler" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn secondary">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Node-cron</span>
+            </div>
+            <h3 class="project-title">Social Scheduler</h3>
+            <p class="project-description">
+              A full-stack application designed for efficient scheduling and
+              automation of social media posts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card glass-card-glow reveal-up" data-tilt>
+          <span class="project-number">03</span>
+          <div class="project-image">
+            <img src="interviewverse.png" alt="Interview Verse" id="project3Img" />
+            <div class="project-overlay">
+              <a href="https://interview-verse.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn primary">Live Demo</a>
+              <a href="https://github.com/Aadityaanand2002/InterviewVerse" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn secondary">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Yjs</span>
+              <span class="project-tag">Stream.io</span>
+              <span class="project-tag">Clerk</span>
+            </div>
+            <h3 class="project-title">Interview Verse</h3>
+            <p class="project-description">
+              An interactive platform providing real-time coding environments
+              to help candidates prepare for technical interviews. (In
+              Progress)
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card glass-card-glow reveal-up" data-tilt>
+          <span class="project-number">04</span>
+          <div class="project-image">
+            <img src="greentrade.png" alt="Green Trade" id="project4Img" />
+            <div class="project-overlay">
+              <a href="https://green-trade-teal.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn primary">Live Demo</a>
+              <a href="https://github.com/Aadityaanand2002/green-trade" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn secondary">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Tailwind</span>
+              <span class="project-tag">Stripe</span>
+            </div>
+            <h3 class="project-title">Green Trade</h3>
+            <p class="project-description">
+              The future of peer-to-peer energy trading. Trade solar and wind energy directly with your neighbors using
+              AI-driven pricing and instant settlements.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card glass-card glass-card-glow reveal-up" data-tilt>
+          <span class="project-number">05</span>
+          <div class="project-image">
+            <img src="agency_ai.png" alt="Agency.ai" id="project5Img" />
+            <div class="project-overlay">
+              <a href="https://agency-ai-tau-pearl.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn primary">Live Demo</a>
+              <a href="https://github.com/Aadityaanand2002/Agency.ai" target="_blank" rel="noopener noreferrer"
+                class="project-overlay-btn secondary">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Vite</span>
+              <span class="project-tag">Tailwind CSS v4</span>
+              <span class="project-tag">Framer Motion</span>
+            </div>
+            <h3 class="project-title">Agency.ai</h3>
+            <p class="project-description">
+              Architected a highly responsive, optimized frontend ecosystem using React 19 and Tailwind CSS v4,
+              successfully reducing layout shift to near 0 across all mobile and desktop viewports for peak rendering
+              performance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card glass-card glass-card-glow reveal-up" data-tilt>
+          <span class="project-number">06</span>
+          <div class="project-image">
+            <img src="self_driving.png" alt="Self Driving Car" id="project6Img" />
+            <div class="project-overlay">
+              <a href="https://aadityaanand2002.github.io/rl-self-driving-car/" target="_blank"
+                rel="noopener noreferrer" class="project-overlay-btn primary">Live Demo</a>
+              <a href="https://github.com/Aadityaanand2002/rl-self-driving-car" target="_blank"
+                rel="noopener noreferrer" class="project-overlay-btn secondary">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Three.js</span>
+              <span class="project-tag">Q-Learning</span>
+            </div>
+            <h3 class="project-title">Self Driving Car (RL)</h3>
+            <p class="project-description">
+              Tabular Q-learning agent that learns to drive on a 4-lane
+              highway in a custom 3D traffic simulator using Three.js and
+              Vite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider"></div>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="skills" id="skills">
+    <div class="gradient-blob blob-3"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Expertise</span>
+        <h2 class="section-title reveal-up">Skills &amp; Technologies</h2>
+        <p class="section-subtitle reveal-up">
+          Technologies I've been working with and continuously improving on.
+        </p>
+      </div>
+
+      <div class="skills-marquee-container">
+        <div class="skills-marquee-track">
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-plus-plus-logo.png"
+              alt="C/C++"><span>C/C++</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/python.png"
+              alt="Python"><span>Python</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/javascript--v1.png"
+              alt="JavaScript/TypeScript"><span>JavaScript/TypeScript</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/html-5--v1.png"
+              alt="HTML+CSS"><span>HTML+CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/react-native.png"
+              alt="React.js"><span>React.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/nodejs.png"
+              alt="Node.js"><span>Node.js</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+              alt="Express"><span>Express</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/ios-filled/96/ffffff/flask.png"
+              alt="Flask"><span>Flask</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg"
+              alt="Three.js"><span>Three.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/tailwindcss.png"
+              alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-plus-plus-logo.png"
+              alt="C/C++"><span>C/C++</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/python.png"
+              alt="Python"><span>Python</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/javascript--v1.png"
+              alt="JavaScript/TypeScript"><span>JavaScript/TypeScript</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/html-5--v1.png"
+              alt="HTML+CSS"><span>HTML+CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/react-native.png"
+              alt="React.js"><span>React.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/nodejs.png"
+              alt="Node.js"><span>Node.js</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+              alt="Express"><span>Express</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/ios-filled/96/ffffff/flask.png"
+              alt="Flask"><span>Flask</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg"
+              alt="Three.js"><span>Three.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/tailwindcss.png"
+              alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-plus-plus-logo.png"
+              alt="C/C++"><span>C/C++</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/python.png"
+              alt="Python"><span>Python</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/javascript--v1.png"
+              alt="JavaScript/TypeScript"><span>JavaScript/TypeScript</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/html-5--v1.png"
+              alt="HTML+CSS"><span>HTML+CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/react-native.png"
+              alt="React.js"><span>React.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/nodejs.png"
+              alt="Node.js"><span>Node.js</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+              alt="Express"><span>Express</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/ios-filled/96/ffffff/flask.png"
+              alt="Flask"><span>Flask</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg"
+              alt="Three.js"><span>Three.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/tailwindcss.png"
+              alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/c-plus-plus-logo.png"
+              alt="C/C++"><span>C/C++</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/python.png"
+              alt="Python"><span>Python</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/javascript--v1.png"
+              alt="JavaScript/TypeScript"><span>JavaScript/TypeScript</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/html-5--v1.png"
+              alt="HTML+CSS"><span>HTML+CSS</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/react-native.png"
+              alt="React.js"><span>React.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/nodejs.png"
+              alt="Node.js"><span>Node.js</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+              alt="Express"><span>Express</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/ios-filled/96/ffffff/flask.png"
+              alt="Flask"><span>Flask</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg"
+              alt="Three.js"><span>Three.js</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/tailwindcss.png"
+              alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+        </div>
+
+        <div class="skills-marquee-track reverse">
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/framermotion/framermotion-original.svg"
+              alt="Framer Motion"><span>Framer Motion</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/yjs.png" alt="Yjs"><span>Yjs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/mongodb.png"
+              alt="MongoDB"><span>MongoDB</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/supabase.png"
+              alt="Supabase"><span>Supabase</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+              alt="Git"><span>Git</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://webrtc.github.io/webrtc-org/assets/images/webrtc-logo-vert-retro-255x305.png"
+              alt="WebRTC"><span>WebRTC</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/GetStream.png"
+              alt="Stream.io"><span>Stream.io</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/clerk.png" alt="Clerk"><span>Clerk</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/stripe.png"
+              alt="Stripe"><span>Stripe</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/framermotion/framermotion-original.svg"
+              alt="Framer Motion"><span>Framer Motion</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/yjs.png" alt="Yjs"><span>Yjs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/mongodb.png"
+              alt="MongoDB"><span>MongoDB</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/supabase.png"
+              alt="Supabase"><span>Supabase</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+              alt="Git"><span>Git</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://webrtc.github.io/webrtc-org/assets/images/webrtc-logo-vert-retro-255x305.png"
+              alt="WebRTC"><span>WebRTC</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/GetStream.png"
+              alt="Stream.io"><span>Stream.io</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/clerk.png" alt="Clerk"><span>Clerk</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/stripe.png"
+              alt="Stripe"><span>Stripe</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/framermotion/framermotion-original.svg"
+              alt="Framer Motion"><span>Framer Motion</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/yjs.png" alt="Yjs"><span>Yjs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/mongodb.png"
+              alt="MongoDB"><span>MongoDB</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/supabase.png"
+              alt="Supabase"><span>Supabase</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+              alt="Git"><span>Git</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://webrtc.github.io/webrtc-org/assets/images/webrtc-logo-vert-retro-255x305.png"
+              alt="WebRTC"><span>WebRTC</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/GetStream.png"
+              alt="Stream.io"><span>Stream.io</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/clerk.png" alt="Clerk"><span>Clerk</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/stripe.png"
+              alt="Stripe"><span>Stripe</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/framermotion/framermotion-original.svg"
+              alt="Framer Motion"><span>Framer Motion</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/yjs.png" alt="Yjs"><span>Yjs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/mongodb.png"
+              alt="MongoDB"><span>MongoDB</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/supabase.png"
+              alt="Supabase"><span>Supabase</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+              alt="Git"><span>Git</span></div>
+          <div class="skill-marquee-item"><img
+              src="https://webrtc.github.io/webrtc-org/assets/images/webrtc-logo-vert-retro-255x305.png"
+              alt="WebRTC"><span>WebRTC</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/GetStream.png"
+              alt="Stream.io"><span>Stream.io</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/clerk.png" alt="Clerk"><span>Clerk</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/stripe.png"
+              alt="Stripe"><span>Stripe</span></div>
+        </div>
+
+        <div class="skills-marquee-track">
+          <div class="skill-marquee-item"><img src="https://github.com/cloudinary.png"
+              alt="Cloudinary"><span>Cloudinary</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/boto.png" alt="Boto3"><span>Boto3</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/artificial-intelligence.png"
+              alt="Hugging Face API"><span>Hugging Face API</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/visual-studio-code-2019.png"
+              alt="VS Code"><span>VS Code</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/code.png" alt="DSA"><span>DSA</span>
+          </div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/object.png"
+              alt="OOPs"><span>OOPs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/network.png"
+              alt="Computer Networks"><span>Computer Networks</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/linux.png"
+              alt="Operating System"><span>Operating System</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/database.png"
+              alt="DBMS"><span>DBMS</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/cloudinary.png"
+              alt="Cloudinary"><span>Cloudinary</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/boto.png" alt="Boto3"><span>Boto3</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/artificial-intelligence.png"
+              alt="Hugging Face API"><span>Hugging Face API</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/visual-studio-code-2019.png"
+              alt="VS Code"><span>VS Code</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/code.png" alt="DSA"><span>DSA</span>
+          </div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/object.png"
+              alt="OOPs"><span>OOPs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/network.png"
+              alt="Computer Networks"><span>Computer Networks</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/linux.png"
+              alt="Operating System"><span>Operating System</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/database.png"
+              alt="DBMS"><span>DBMS</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/cloudinary.png"
+              alt="Cloudinary"><span>Cloudinary</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/boto.png" alt="Boto3"><span>Boto3</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/artificial-intelligence.png"
+              alt="Hugging Face API"><span>Hugging Face API</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/visual-studio-code-2019.png"
+              alt="VS Code"><span>VS Code</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/code.png" alt="DSA"><span>DSA</span>
+          </div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/object.png"
+              alt="OOPs"><span>OOPs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/network.png"
+              alt="Computer Networks"><span>Computer Networks</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/linux.png"
+              alt="Operating System"><span>Operating System</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/database.png"
+              alt="DBMS"><span>DBMS</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/cloudinary.png"
+              alt="Cloudinary"><span>Cloudinary</span></div>
+          <div class="skill-marquee-item"><img src="https://github.com/boto.png" alt="Boto3"><span>Boto3</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/artificial-intelligence.png"
+              alt="Hugging Face API"><span>Hugging Face API</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/visual-studio-code-2019.png"
+              alt="VS Code"><span>VS Code</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/code.png" alt="DSA"><span>DSA</span>
+          </div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/object.png"
+              alt="OOPs"><span>OOPs</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/network.png"
+              alt="Computer Networks"><span>Computer Networks</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/linux.png"
+              alt="Operating System"><span>Operating System</span></div>
+          <div class="skill-marquee-item"><img src="https://img.icons8.com/color/96/database.png"
+              alt="DBMS"><span>DBMS</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Divider -->
+  <div class="section-divider"></div>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Journey</span>
+        <h2 class="section-title reveal-up">Professional Experience</h2>
+        <p class="section-subtitle reveal-up">
+          My professional journey and the milestones that shaped my
+          development career.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line-fill" id="timelineFill"></div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot">🤖</div>
+          <div class="timeline-card glass-card glass-card-glow">
+            <div class="timeline-date">Recent</div>
+            <h3 class="timeline-title">Freelance AI Data Model Evaluator</h3>
+            <div class="timeline-company">Freelance</div>
+            <p class="timeline-description">
+              Working on the training, fine-tuning, and evaluation of advanced
+              AI data models to ensure accuracy and performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider"></div>
+
+  <!-- ========== CODING PROFILES ========== -->
+  <section class="coding-profiles" id="coding-profiles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Competitive Programming</span>
+        <h2 class="section-title reveal-up">Coding Profiles</h2>
+        <p class="section-subtitle reveal-up">
+          My statistics and achievements across various coding platforms.
+        </p>
+      </div>
+
+      <div class="cp-grid">
+        <!-- LeetCode Card -->
+        <a href="https://leetcode.com/u/Aditya_Anand12/" target="_blank" rel="noopener noreferrer"
+          class="cp-card glass-card glass-card-glow reveal-up">
+          <div class="cp-header">
+            <div>
+              <h3 class="cp-title">LeetCode</h3>
+              <span class="cp-handle">@Aditya_Anand12</span>
+            </div>
+            <div class="cp-icon">
+              <img src="https://cdn.simpleicons.org/leetcode/FFA116" alt="LeetCode" />
+            </div>
+          </div>
+          <div class="cp-stats">
+            <div class="cp-stat-row">
+              <span class="cp-stat-label">Max Rating</span>
+              <span class="cp-stat-value text-cyan" id="lc-rating">1456</span>
+            </div>
+            <div class="cp-stat-row">
+              <span class="cp-stat-label">Question Solved</span>
+              <span class="cp-stat-value text-green" id="lc-solved">500</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- GeeksforGeeks Card -->
+        <a href="https://www.geeksforgeeks.org/profile/ak823s4dn?tab=activity" target="_blank" rel="noopener noreferrer"
+          class="cp-card glass-card glass-card-glow reveal-up">
+          <div class="cp-header">
+            <div>
+              <h3 class="cp-title">GeeksforGeeks</h3>
+              <span class="cp-handle">@ak823s4dn</span>
+            </div>
+            <div class="cp-icon">
+              <img src="https://cdn.simpleicons.org/geeksforgeeks/2F8D46" alt="GeeksforGeeks" />
+            </div>
+          </div>
+          <div class="cp-stats">
+            <div class="cp-stat-row">
+              <span class="cp-stat-label">Max Rating</span>
+              <span class="cp-stat-value text-cyan">353</span>
+            </div>
+            <div class="cp-stat-row">
+              <span class="cp-stat-label">Question Solved</span>
+              <span class="cp-stat-value text-green">200</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Codeforces Card -->
+        <a href="https://codeforces.com/profile/Coookies" target="_blank" rel="noopener noreferrer"
+          class="cp-card glass-card glass-card-glow reveal-up">
+          <div class="cp-header">
+            <div>
+              <h3 class="cp-title">Codeforces</h3>
+              <span class="cp-handle">@Coookies</span>
+            </div>
+            <div class="cp-icon">
+              <img src="https://cdn.simpleicons.org/codeforces/1F8ACB" alt="Codeforces" />
+            </div>
+          </div>
+          <div class="cp-stats">
+            <div class="cp-stat-row">
+              <span class="cp-stat-label">Max Rating</span>
+              <span class="cp-stat-value text-cyan" id="cf-rating">802</span>
+            </div>
+            <div class="cp-stat-row">
+              <span class="cp-stat-label">Question Solved</span>
+              <span class="cp-stat-value text-green" id="cf-solved">19</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS ========== -->
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Milestones</span>
+        <h2 class="section-title reveal-up">Achievements & Awards</h2>
+        <p class="section-subtitle reveal-up">
+          Key milestones and recognitions from my journey so far.
+        </p>
+      </div>
+
+      <div class="achievements-grid">
+        <div class="achievement-card glass-card glass-card-glow reveal-up">
+          <div class="achievement-icon">💻</div>
+          <div class="achievement-content">
+            <h3 class="achievement-title">DSA & Problem Solving</h3>
+            <span class="achievement-date">Ongoing</span>
+            <p class="achievement-desc">
+              Solved 600+ DSA problems across LeetCode, GeeksforGeeks, and CodeForces.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider"></div>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="gradient-blob blob-1"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Get In Touch</span>
+        <h2 class="section-title reveal-up">Let's Work Together</h2>
+        <p class="section-subtitle reveal-up">
+          Have a project in mind or just want to say hello? I'd love to hear
+          from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3>Let's create something amazing together.</h3>
+          <p>
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of your vision.
+          </p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <a href="mailto:adityaanand15902@gmail.com">adityaanand15902@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📱</div>
+            <div class="contact-detail-text">
+              <strong>Phone</strong>
+              <a href="tel:+919308817989">+91 9308817989</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Location</strong>
+              IIIT Surat, India
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">💼</div>
+            <div class="contact-detail-text">
+              <strong>Status</strong>
+              Available for Opportunities
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter" title="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-card glass-card glass-card-glow reveal-right">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <input type="text" class="form-input" id="contactName" placeholder="Your Name" required
+                autocomplete="name" />
+              <label class="form-label" for="contactName">Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-input" id="contactEmail" placeholder="Your Email" required
+                autocomplete="email" />
+              <label class="form-label" for="contactEmail">Email</label>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="contactSubject" placeholder="Subject" autocomplete="off" />
+              <label class="form-label" for="contactSubject">Subject</label>
+            </div>
+            <div class="form-group">
+              <textarea class="form-textarea" id="contactMessage" placeholder="Your Message" rows="5"
+                required></textarea>
+              <label class="form-label" for="contactMessage">Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="formSubmitBtn">
+              <span>Send Message</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        Designed & Built by <span>Aditya Anand</span> · © 2024. All rights
+        reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

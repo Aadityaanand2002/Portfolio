@@ -101,17 +101,17 @@
 }
 
 .bg-cyan {
-  background-color: rgba(34, 211, 238, 0.2);
-  border: 1px solid rgba(34, 211, 238, 0.4);
-  color: #22d3ee;
+  background-color: rgba(252, 211, 77, 0.2);
+  border: 1px solid rgba(252, 211, 77, 0.4);
+  color: #fcd34d;
 }
 
 .text-cyan {
-  color: #22d3ee;
+  color: #fcd34d;
 }
 
 .text-pink {
-  color: #f472b6;
+  color: #fb923c;
 }
 
 .text-green {

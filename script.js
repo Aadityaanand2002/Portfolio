@@ -536,7 +536,7 @@
       // Inner glow effect based on mouse position
       const glowX = (x / rect.width) * 100;
       const glowY = (y / rect.height) * 100;
-      card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(108, 99, 255, 0.08), rgba(14, 14, 24, 0.7) 60%)`;
+      card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(225, 29, 72, 0.08), rgba(14, 14, 24, 0.7) 60%)`;
     });
 
     card.addEventListener('mouseleave', () => {
@@ -616,7 +616,7 @@
 
         // Success
         submitBtn.innerHTML        = '<span>Message Sent! ✓</span>';
-        submitBtn.style.background = 'linear-gradient(135deg, #34d399, #22d3ee)';
+        submitBtn.style.background = 'linear-gradient(135deg, #34d399, #fcd34d)';
         submitBtn.style.boxShadow  = '0 4px 20px rgba(52, 211, 153, 0.4)';
 
         setTimeout(() => {
@@ -812,11 +812,11 @@
     }
   }
 
-  generatePlaceholderImage('project1Img', ['#1a0a3e', '#3d1f8a', '#6c63ff'], '🔍');
-  generatePlaceholderImage('project2Img', ['#0a2a3e', '#1a4a6a', '#22d3ee'], '📅');
-  generatePlaceholderImage('project3Img', ['#3e0a2a', '#6a1a4a', '#f472b6'], '🎤');
-  generatePlaceholderImage('project4Img', ['#0a3e2a', '#1a5a3a', '#34d399'], '🚗');
-  generatePlaceholderImage('project5Img', ['#3e1a0a', '#6a3d1f', '#fb923c'], '🤖');
+  generatePlaceholderImage('project1Img', ['#1a0a3e', '#3d1f8a', '#e11d48'], '🔍');
+  generatePlaceholderImage('project2Img', ['#0a2a3e', '#1a4a6a', '#fcd34d'], '📅');
+  // generatePlaceholderImage('project3Img', ['#3e0a2a', '#6a1a4a', '#fb923c'], '🎤');
+  // generatePlaceholderImage('project6Img', ['#0a3e2a', '#1a5a3a', '#34d399'], '🚗');
+  // generatePlaceholderImage('project5Img', ['#3e1a0a', '#6a3d1f', '#fb923c'], '🤖');
   // ============================================
   // 14. FETCH CODING PROFILE STATS
   // ============================================
