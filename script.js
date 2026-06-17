@@ -662,33 +662,17 @@
   document.head.appendChild(shakeStyle);
 
   // ============================================
-  // 12. SMOOTH SCROLL (Lenis Integration)
+  // 12. SMOOTH SCROLL (Native)
   // ============================================
-  const lenis = new Lenis({
-    lerp: 0.1, // More natural, responsive feel (less gliding)
-    smoothWheel: true,
-    wheelMultiplier: 0.9 // Slightly softer scroll distance
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // Synchronize Lenis with GSAP ScrollTrigger
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-  gsap.ticker.lagSmoothing(0, 0);
+  // We use native CSS scroll-behavior: smooth for maximum browser compatibility
+  // and to perfectly support Mac trackpad two-finger scrolling.
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        lenis.scrollTo(target);
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
