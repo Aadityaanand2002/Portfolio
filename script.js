@@ -24,7 +24,7 @@
   });
 
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25)); // Clamped pixel ratio to prevent fill-rate lag
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
   camera.position.z = 5;
@@ -36,15 +36,15 @@
   const isMobile = window.innerWidth < 768;
 
   // --- The Morphing Liquid Blob (Centerpiece) ---
-  const blobGeometry = new THREE.IcosahedronGeometry(1.8, isMobile ? 8 : 16);
+  const blobGeometry = new THREE.IcosahedronGeometry(1.8, isMobile ? 6 : 8); // Reduced detail to fix CPU lag
   const blobMaterial = new THREE.MeshPhysicalMaterial({
     color: 0x22d3ee, // Base cyan
     roughness: 0.1,
     metalness: 0.2,
-    transmission: isMobile ? 0 : 0.95, // Disable heavy refraction pass on mobile
+    transmission: isMobile ? 0 : 0.6, // Reduced transmission for better fill rate
     thickness: 1.5,     // Refraction thickness
     ior: 1.4,
-    clearcoat: isMobile ? 0 : 1.0, // Disable clearcoat on mobile
+    clearcoat: isMobile ? 0 : 0.5, // Reduced clearcoat
     clearcoatRoughness: 0.1,
     emissive: 0x6c63ff,
     emissiveIntensity: 0.1,
@@ -66,7 +66,7 @@
   scene.fog = new THREE.FogExp2(0x06060b, 0.035);
 
   // --- Interactive Particle Field ---
-  const particleCount = isMobile ? 1200 : 3500;
+  const particleCount = isMobile ? 600 : 1200; // Reduced particle count
   const particleGeo = new THREE.BufferGeometry();
   const particlePos = new Float32Array(particleCount * 3);
   const particleSpeeds = new Float32Array(particleCount);
@@ -91,7 +91,7 @@
   scene.add(particles);
 
   // --- Premium Flowing Wireframe Terrain ---
-  const terrainGeo = new THREE.PlaneGeometry(120, 120, isMobile ? 30 : 60, isMobile ? 30 : 60);
+  const terrainGeo = new THREE.PlaneGeometry(120, 120, isMobile ? 20 : 30, isMobile ? 20 : 30); // Reduced segments
   const terrainMat = new THREE.MeshBasicMaterial({
     color: 0x6c63ff, // Purple accent
     wireframe: true,
@@ -163,8 +163,8 @@
     }
     positionAttribute.needsUpdate = true;
     
-    // Throttle heavy geometry computation on mobile to prevent CPU spikes
-    if (!isMobile || Math.random() > 0.5) {
+    // Throttle heavy geometry computation to every few frames to prevent CPU spikes
+    if (Math.random() > 0.8) {
       blobGeometry.computeVertexNormals();
     }
 
@@ -217,7 +217,7 @@
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25)); // Clamped pixel ratio to prevent fill-rate lag
       lastWidth = window.innerWidth;
     }
   });

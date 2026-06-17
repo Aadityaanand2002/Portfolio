@@ -232,13 +232,12 @@ section {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(225, 29, 72, 0.4);
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(32px) saturate(120%);
-  -webkit-backdrop-filter: blur(32px) saturate(120%);
+  backdrop-filter: blur(12px) saturate(120%); /* Reduced blur to fix Safari lag */
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.12),
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    0 0  6px rgba(225, 29, 72, 0.2),
-    0 0 18px rgba(225, 29, 72, 0.1);
+    0 4px 16px rgba(0, 0, 0, 0.5), /* Simplified shadows for better performance */
+    0 0  6px rgba(225, 29, 72, 0.2);
   transition: background var(--transition-medium), border-color var(--transition-medium), transform var(--transition-medium), box-shadow var(--transition-medium);
   position: relative;
 }
@@ -250,10 +249,8 @@ section {
   inset: -1px;
   border-radius: inherit;
   box-shadow:
-    0 0  8px rgba(225, 29, 72, 0.90),
-    0 0 22px rgba(225, 29, 72, 0.60),
-    0 0 50px rgba(225, 29, 72, 0.30),
-    0 0 90px rgba(225, 29, 72, 0.10);
+    0 0  8px rgba(225, 29, 72, 0.80),
+    0 0 22px rgba(225, 29, 72, 0.40); /* Removed outer heavy glows */
   opacity: 0.3;
   transition: opacity var(--transition-medium);
   pointer-events: none;
