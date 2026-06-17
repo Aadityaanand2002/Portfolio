@@ -665,8 +665,9 @@
   // 12. SMOOTH SCROLL (Lenis Integration)
   // ============================================
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    lerp: 0.1, // More natural, responsive feel (less gliding)
+    smoothWheel: true,
+    wheelMultiplier: 0.9 // Slightly softer scroll distance
   });
 
   function raf(time) {
